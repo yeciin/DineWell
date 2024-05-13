@@ -28,13 +28,23 @@ public class Menu : MonoBehaviour
     void Start()
     {
         activeItems = new List<GameObject>();
-        ActivateMainMenuButtons();
+       addActiveItems(mainMenuButtons);
     }
 
     public void addActiveItem(GameObject item)
     {
         item.SetActive(true);
         activeItems.Add(item);
+    }
+
+    public void addActiveItems(GameObject[] items)
+    {
+        
+        foreach (GameObject item in items)
+        {
+            item.SetActive(true);
+            activeItems.Add(item);
+        }
     }
 
     public void removeActiveItem(GameObject item)
