@@ -5,6 +5,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
 
+    public List<GameObject> activeItems;
     public GameObject[] mainMenuButtons;
     public GameObject[] mainItems;
     public GameObject[] appetizersItems;
@@ -26,7 +27,29 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        activeItems = new List<GameObject>();
         ActivateMainMenuButtons();
+    }
+
+    public void addActiveItem(GameObject item)
+    {
+        item.SetActive(true);
+        activeItems.Add(item);
+    }
+
+    public void removeActiveItem(GameObject item)
+    {
+        item.SetActive(false);
+        activeItems.Remove(item);
+    }
+
+    public void removeAllActiveItems()
+    {
+        foreach (GameObject item in activeItems)
+        {
+            item.SetActive(false);
+        }
+        activeItems.Clear();
     }
 
     public void openMainMenu()
