@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
     public GameObject[] drinkItemDetails;
     public GameObject[] dessertItemDetails;
     public GameObject[] appetizerModels;
-    public GameObject[] maindishModels;
+    public GameObject[] mainDishModels;
     public GameObject[] dessertModels;
     public GameObject[] drinkModels;
     public GameObject backButton;
@@ -26,21 +26,15 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        ActivateMainMenuButtons()
+        ActivateMainMenuButtons();
     }
 
     public void openMainMenu()
     {
-        mainDishesDesign.SetActive(true);
-        closeAppetizers();
-        closeDesserts();
-        closeMainDishes();
-        closeDrinks();
-        backButton.SetActive(false);
-        mainsButton.SetActive(true);
-        appetizersButton.SetActive(true);
-        drinksButton.SetActive(true);
-        dessertsButton.SetActive(true);
+        ActivateMainMenuButtons();
+        DeactivateAppetizerButtons();
+        DeactivateDessertButtons();
+        DeactivateDrinkButtons();
     }
 
     public void openAppetizers()
@@ -48,7 +42,7 @@ public class Menu : MonoBehaviour
         DeactivateMainMenuButtons();
         backButton.SetActive(true);
         ActivateAppetizerButtons();
-
+        //should add function here that disables ItemDetails in case we are going back
     }
 
 
@@ -100,6 +94,47 @@ public class Menu : MonoBehaviour
             }
         }
     }
+    public void ActivateDessertButtons()
+    {
+        foreach (GameObject button in dessertItems)
+        {
+            if (button != null)
+            {
+                button.SetActive(true);
+            }
+        }
+    }
+    public void DeactivateDessertButtons()
+    {
+        foreach (GameObject button in dessertItems)
+        {
+            if (button != null)
+            {
+                button.SetActive(false);
+            }
+        }
+    }
+    public void ActivateDrinkButtons()
+    {
+        foreach (GameObject button in drinksItems)
+        {
+            if (button != null)
+            {
+                button.SetActive(true);
+            }
+        }
+    }
+    public void DeactivateDrinkButtons()
+    {
+        foreach (GameObject button in drinksItems)
+        {
+            if (button != null)
+            {
+                button.SetActive(false);
+            }
+        }
+    }
+
 
 }
 
