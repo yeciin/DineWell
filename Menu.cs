@@ -39,6 +39,7 @@ public class Menu : MonoBehaviour
 
     public void addActiveItems(GameObject[] items)
     {
+        removeAllActiveItems();
         
         foreach (GameObject item in items)
         {
@@ -64,109 +65,111 @@ public class Menu : MonoBehaviour
 
     public void openMainMenu()
     {
-        ActivateMainMenuButtons();
-        DeactivateAppetizerButtons();
-        DeactivateDessertButtons();
-        DeactivateDrinkButtons();
+        backButton.SetActive(true);
+        addActiveItems(mainItems);
     }
-
     public void openAppetizers()
     {
-        DeactivateMainMenuButtons();
         backButton.SetActive(true);
-        ActivateAppetizerButtons();
-        //should add function here that disables ItemDetails in case we are going back
+        addActiveItems(appetizersItems);
     }
-
-
-
-
-
-
-
-
-
-
-    public void ActivateMainMenuButtons()
+    public void openDesserts()
     {
-        foreach (GameObject button in mainMenuButtons)
-        {
-            if (button != null)
-            {
-                button.SetActive(true);
-            }
-        }
+        backButton.SetActive(true);
+        addActiveItems(dessertItems);
     }
-    public void DeactivateMainMenuButtons()
+    public void openDrinks()
     {
-        foreach (GameObject button in mainMenuButtons)
-        {
-            if (button != null)
-            {
-                button.SetActive(false);
-            }
-        }
+        backButton.SetActive(true);
+        addActiveItems(drinksItems);
     }
-    public void ActivateAppetizerButtons()
-    {
-        foreach (GameObject button in appetizersItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(true);
-            }
-        }
-    }
-    public void DeactivateAppetizerButtons()
-    {
-        foreach (GameObject button in appetizersItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(false);
-            }
-        }
-    }
-    public void ActivateDessertButtons()
-    {
-        foreach (GameObject button in dessertItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(true);
-            }
-        }
-    }
-    public void DeactivateDessertButtons()
-    {
-        foreach (GameObject button in dessertItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(false);
-            }
-        }
-    }
-    public void ActivateDrinkButtons()
-    {
-        foreach (GameObject button in drinksItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(true);
-            }
-        }
-    }
-    public void DeactivateDrinkButtons()
-    {
-        foreach (GameObject button in drinksItems)
-        {
-            if (button != null)
-            {
-                button.SetActive(false);
-            }
-        }
-    }
+
+
+
+
+
+
+
+    // public void ActivateMainMenuButtons()
+    // {
+    //     foreach (GameObject button in mainMenuButtons)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(true);
+    //         }
+    //     }
+    // }
+    // public void DeactivateMainMenuButtons()
+    // {
+    //     foreach (GameObject button in mainMenuButtons)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(false);
+    //         }
+    //     }
+    // }
+    // public void ActivateAppetizerButtons()
+    // {
+    //     foreach (GameObject button in appetizersItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(true);
+    //         }
+    //     }
+    // }
+    // public void DeactivateAppetizerButtons()
+    // {
+    //     foreach (GameObject button in appetizersItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(false);
+    //         }
+    //     }
+    // }
+    // public void ActivateDessertButtons()
+    // {
+    //     foreach (GameObject button in dessertItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(true);
+    //         }
+    //     }
+    // }
+    // public void DeactivateDessertButtons()
+    // {
+    //     foreach (GameObject button in dessertItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(false);
+    //         }
+    //     }
+    // }
+    // public void ActivateDrinkButtons()
+    // {
+    //     foreach (GameObject button in drinksItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(true);
+    //         }
+    //     }
+    // }
+    // public void DeactivateDrinkButtons()
+    // {
+    //     foreach (GameObject button in drinksItems)
+    //     {
+    //         if (button != null)
+    //         {
+    //             button.SetActive(false);
+    //         }
+    //     }
+    // }
 
 
 }
