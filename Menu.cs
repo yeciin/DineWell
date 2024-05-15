@@ -202,18 +202,24 @@ public class Menu : MonoBehaviour
 
     public void MainItem1DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[0].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (mainItemsDetail[0].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[0].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
     public void MainItem2DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[1].SetActive(true);
-        models[16].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (mainItemsDetail[1].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[1].SetActive(true);
+            models[16].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void MainItem3DisplayModel()
@@ -351,6 +357,17 @@ public class Menu : MonoBehaviour
         else if (IsAnyActive(Mains) || IsAnyActive(Desserts) || IsAnyActive(Appetizers) || IsAnyActive(Drinks))
         {
             AddToActiveUI(mainMenu);
+        }
+        else if (models[0].activeSelf)
+        {
+            models[0].SetActive(false);
+            mainItem1Details();
+        }
+        else if (models[1].activeSelf)
+        {
+            models[1].SetActive(false);
+            models[16].SetActive(false);
+            mainItem2Details();
         }
     }
 
