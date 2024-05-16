@@ -361,13 +361,46 @@ public class Menu : MonoBehaviour
         else if (models[0].activeSelf)
         {
             models[0].SetActive(false);
+            ActiveARBackButton.SetActive(false);
             mainItem1Details();
         }
         else if (models[1].activeSelf)
         {
             models[1].SetActive(false);
             models[16].SetActive(false);
+            ActiveARBackButton.SetActive(false);
             mainItem2Details();
+        }
+        else if (models[4].activeSelf)
+        {
+            models[4].SetActive(false);
+            models[16].SetActive(false);
+            ActiveARBackButton.SetActive(false);
+            dessertItem1Details();
+        }
+        else if (models[8].activeSelf)
+        {
+            models[8].SetActive(false);
+            ActiveARBackButton.SetActive(false);
+            drinkItem1Details();
+        }
+        else if (models[9].activeSelf)
+        {
+            models[9].SetActive(false);
+            ActiveARBackButton.SetActive(false);
+            drinkItem2Details();
+        }
+        else if (models[12].activeSelf)
+        {
+            models[12].SetActive(false);
+            ActiveARBackButton.SetActive(false);
+            dessertItem1Details();
+        }
+        else if (models[13].activeSelf)
+        {
+            models[13].SetActive(false);
+            ActiveARBackButton.SetActive(false);
+            dessertItem2Details();
         }
     }
 
