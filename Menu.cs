@@ -239,11 +239,14 @@ public class Menu : MonoBehaviour
     }
     public void AppetizerItem1DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[4].SetActive(true);
-        models[16].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (appetizerItemsDetail[0].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[4].SetActive(true);
+            models[16].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void AppetizerItem2DisplayModel()
@@ -271,18 +274,24 @@ public class Menu : MonoBehaviour
     }
     public void DrinkItem1DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[8].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (drinkItemsDetail[0].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[8].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void DrinkItem2DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[9].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (drinkItemsDetail[1].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[9].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void DrinkItem3DisplayModel()
@@ -302,18 +311,24 @@ public class Menu : MonoBehaviour
     }
     public void DessertItem1DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[12].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (dessertItemsDetail[0].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[12].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void DessertItem2DisplayModel()
     {
-        RemoveFromActiveUI();
-        models[13].SetActive(true);
-        backbutton.SetActive(true);
-        ActiveARBackButton.SetActive(true);
+        if (dessertItemsDetail[1].activeSelf)
+        {
+            RemoveFromActiveUI();
+            models[13].SetActive(true);
+            backbutton.SetActive(true);
+            ActiveARBackButton.SetActive(true);
+        }
     }
 
     public void DessertItem3DisplayModel()
@@ -376,7 +391,7 @@ public class Menu : MonoBehaviour
             models[4].SetActive(false);
             models[16].SetActive(false);
             ActiveARBackButton.SetActive(false);
-            dessertItem1Details();
+            appetizerItem1Details();
         }
         else if (models[8].activeSelf)
         {
