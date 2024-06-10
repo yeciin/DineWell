@@ -531,5 +531,6 @@ public class Menu : MonoBehaviour
 //     public GameObject model;
 //     public Button placeItemButton;
 //     public GameObject decoration;
+
 // }
 
